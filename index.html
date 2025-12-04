@@ -169,25 +169,60 @@
     <h1>А пока давай поиграем!</h1>
     <h3>Выбери игру и начни веселиться!</h3>
     <div class="events-container">
-      <a href="#podarkopad" class="event-card">
-        <h2>Подаркопад 🎁</h2>
-        <p>Подарки выпали из мешка Деда Мороза! Лови их!</p>
-      </a>
-      <a href="#snezki" class="event-card">
-        <h2>Снежки ❄️</h2>
-        <p>Эти подарки научились летать? Нужно вернуть их на землю!</p>
-      </a>
-      <a href="#zharkaya-zima" class="event-card">
-        <h2>Жаркая Зима 🔥</h2>
-        <p>Кажеться, Снеговики тают! Помоги им остыть.</p>
-      </a>
-      <a href="#viktorina" class="event-card">
-        <h2>Новогодняя викторина 🧠</h2>
-        <p>Проверь свои знания о Новом Годе и Рождестве!</p>
-      </a>
+      <div class="event-card podarkopad" id="podarkopad">
+        <h2 class="podarkopad_H2">Подаркопад 🎁</h2>
+        <p class="podarkopad_P">
+          Подарки выпали из мешка Деда Мороза! Лови их!
+        </p>
+      </div>
+      <div class="event-card snezki" id="snezki">
+        <h2 class="snezki_H2">Снежки ❄️</h2>
+        <p class="snezki_P">
+          Эти подарки научились летать? Нужно вернуть их на землю!
+        </p>
+      </div>
+      <div class="event-card zharkaya_zima" id="zharkaya_zima">
+        <h2 class="zharkaya_zima_H2">Жаркая Зима 🔥</h2>
+        <p class="zharkaya_zima_P">
+          Кажеться, Снеговики тают! Помоги им остыть.
+        </p>
+      </div>
+      <div class="event-card viktorina" id="viktorina">
+        <h2 class="viktorina_H2">Новогодняя викторина 🧠</h2>
+        <p class="viktorina_P">Проверь свои знания о Новом Годе и Рождестве!</p>
+      </div>
     </div>
 
     <script>
+      document.addEventListener("click", (e) => {
+        let target = e.target;
+        console.log(target);
+        if (
+          target.classList.contains("podarkopad") ||
+          target.classList.contains("podarkopad_H2") ||
+          target.classList.contains("podarkopad_P")
+        ) {
+          window.location.href = "https://maxim-prog292.github.io/podarkopad/";
+        } else if (
+          target.classList.contains("snezki") ||
+          target.classList.contains("snezki_H2") ||
+          target.classList.contains("snezki_P")
+        ) {
+          window.location.href = "https://maxim-prog292.github.io/snowballs/";
+        } else if (
+          target.classList.contains("zharkaya_zima") ||
+          target.classList.contains("zharkaya_zima_H2") ||
+          target.classList.contains("zharkaya_zima_P")
+        ) {
+          window.location.href = "https://maxim-prog292.github.io/Hot-Winter/";
+        } else if (
+          target.classList.contains("viktorina") ||
+          target.classList.contains("viktorina_H2") ||
+          target.classList.contains("viktorina_P")
+        ) {
+          window.location.href = "https://maxim-prog292.github.io/Quiz/";
+        }
+      });
       function getNextNewYearTarget(now) {
         const year = now.getFullYear();
         return new Date(year + 1, 0, 1, 0, 0, 0, 0);
